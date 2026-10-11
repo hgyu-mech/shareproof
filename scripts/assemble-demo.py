@@ -12,11 +12,12 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import shutil
 import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_FFMPEG = Path(r"D:\ffmpeg-7.1.1-essentials_build\ffmpeg-7.1.1-essentials_build\bin\ffmpeg.exe")
+DEFAULT_FFMPEG = shutil.which("ffmpeg")
 PALETTE = {
     "paper": "#f6f4ef", "ink": "#242b2a", "muted": "#68716d",
     "line": "#deded6", "accent": "#b63e2b", "soft": "#eeece5",

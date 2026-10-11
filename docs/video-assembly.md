@@ -29,11 +29,10 @@ Use names such as `01.png` or `01-workbench.png`, with exactly one matching PNG 
 
 Run from the project directory using the bundled Python interpreter:
 
-```powershell
-$demoPython = 'C:\Users\USER\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-& $demoPython scripts/assemble-demo.py --plan
-& $demoPython scripts/assemble-demo.py --check
-& $demoPython scripts/assemble-demo.py --render
+```sh
+python scripts/assemble-demo.py --plan
+python scripts/assemble-demo.py --check
+python scripts/assemble-demo.py --render --ffmpeg /path/to/ffmpeg
 ```
 
 `--plan` and `--check` write no files. `--render` stops before composing or encoding if any capture is missing, ambiguous or invalid. It needs Pillow, Segoe UI and Georgia fonts, and the supplied local ffmpeg installation. A different executable can be passed with `--ffmpeg`.
