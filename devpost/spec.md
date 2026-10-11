@@ -1,6 +1,3 @@
----
-status: draft
----
 # Implementation specification
 
 ## Stack
@@ -18,12 +15,11 @@ Image version and review edits invalidate verified Blob/object URL. Downloads us
 ## Verification scope
 Selected regions only. Exact equality over every RGBA pixel in those regions; ancillary PNG chunks outside the image decode requirements are removed. Re-decode happens after stripping and hashes are computed on those exact bytes. Unsupported PNG layout, decode errors or mismatched dimensions fail closed. This is not an all-image privacy guarantee or PDF redaction.
 
-## Threats / limits
+## Data handling and limits
 OCR can miss email/phone text, particularly small or non-English text; the UI requires manual review. A kept candidate is an intentional decision and recorded as a count. Browser memory is not persistent storage, but browser implementation may cache assets. App code makes no image upload request. Third-party hosting still receives ordinary page requests. JPEG/WebP metadata is not copied to the PNG. Detect file signature and decoded dimensions rather than trusting filename. Prevent stale verified output and avoid private strings in logs or notes.
 
-## Build slices
-1. Canvas source → manual masks → final PNG round trip, tests and working UI.
-2. Bundled OCR → reviewed candidates → failure states and note, responsive visual QA.
+## Verification
+Core tests cover candidate extraction, clipped rectangles, opaque pixel equality and PNG structure. The browser workflow has been exercised on the synthetic receipt, including actual OCR suggestions, manual covers, PNG and note downloads, and invalidation after a review change. See [Verification](checklist.md) for the checked output and scope.
 
-## Provenance
-Fresh project created October 11, 2026, during the contest submission period. Official Devpost Learn Skill Pack guides used for profile, scope, PRD, spec, build and ship checks. Open-source OCR dependency and its pretrained language model are disclosed; model training is not claimed. Prior FitCheck exploration is separate and is not copied into this app.
+## Dependencies and licenses
+Tesseract.js and its pretrained English model are bundled with their existing licenses and notices. Asset versions, source references and hashes are recorded in [ocr-manifest.json](../dist/assets/ocr-manifest.json). Project-specific code uses the MIT license.

@@ -4,6 +4,8 @@ Inspect the screenshot file you are about to share.
 
 ShareProof helps people prepare application receipts and software screenshots for public sharing. It suggests possible email and phone locations, lets the owner cover other details by hand, and checks the selected covers in the actual exported PNG.
 
+[Try the app](https://shareproof-workbench.dgrrgddgrrgd.chatgpt.site) · [Watch the 2:20 demonstration](https://youtu.be/xkf0LrtodzU)
+
 ## Run locally
 
 Use Node.js 22 or newer and a current browser with Canvas, WebAssembly and Web Crypto support.
@@ -55,17 +57,17 @@ Input limits are 12 MB, 12 million decoded pixels and 16,000 pixels per edge. Th
 | `dist/sample.js` | Original synthetic receipt generated with Canvas |
 | `dist/assets/` | Bundled OCR dependencies, model, licenses and hashes |
 | `tests/core.test.mjs` | Pure-function checks for boundaries, candidates, pixels and PNG structure |
-| `devpost/scope.md`, `prd.md`, `spec.md` | Draft planning documents produced through the official Devpost Learn workflow |
-| `.agents/skills/` | Locally installed official six-stage Skill Pack; ignored in the public repository |
+| `devpost/scope.md`, `prd.md`, `spec.md` | Project scope, product requirements and implementation specification |
+| `devpost/checklist.md` | Verification results and their scope |
 
 Run the included core checks with `npm test`. All 12 currently pass. They cover split OCR tokens, contact-string-free candidate output, reverse and fractional rectangles, opaque pixel equality, overlapping regions, metadata removal, palette preservation and malformed PNG rejection.
 
 A browser run on the built-in synthetic receipt found two contact suggestions. Both were covered, a name cover was added, and the PNG and note were downloaded. Independent decoding of that 1160 × 910 PNG confirmed all 27,480 selected pixels had the exact opaque cover color. Its hash matched the note, PNG checksums were valid, only IHDR/IDAT/IEND chunks remained, and recognized sample contact strings were absent from the note. These results cover this sample and its selected regions; they do not measure OCR recall across other images or establish device compatibility.
 
-## Build provenance and submission
+## Build and licensing
 
-ShareProof was created on October 11, 2026 for Build With AI: Basics. The six official Devpost Learn stages guided learner context, scope, PRD, specification, build and shipping checks. Implementation and writing were assisted by a coding agent. The planning documents remain drafts pending the participant's review. The [official Skill Pack](https://github.com/challengepost/learn-ai-basics) is installed locally for that workflow.
+ShareProof was created on October 11, 2026 for Build With AI: Basics. OpenAI Codex assisted implementation and documentation. The [official Devpost Learn Skill Pack](https://github.com/challengepost/learn-ai-basics) structured scope, requirements, specification and verification.
 
 Tesseract.js, its WebAssembly core, the pretrained English model and their dependency assets predate this project. Their licenses and notices are retained in [THIRD-PARTY-NOTICES.md](dist/assets/THIRD-PARTY-NOTICES.md), with versions and hashes in `dist/assets/ocr-manifest.json`. Project-specific code is MIT licensed; third-party material retains its own terms.
 
-The [official rules](https://learn-ai-basics.devpost.com/rules) require a public repository with working source, assets and planning documents, plus a public demonstration video under three minutes. Design, Potential Impact, Innovation/Idea and Presentation carry equal weight. `DEVPOST_DRAFT.md` and `docs/demo-script.md` prepare those materials; their presence does not establish publication or submission.
+The [project story](devpost/submission-copy.md), [verification summary](devpost/checklist.md) and [demonstration guide](docs/demo-script.md) describe the working release.

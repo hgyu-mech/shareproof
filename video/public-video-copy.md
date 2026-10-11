@@ -10,7 +10,7 @@ The demonstrated PNG passed an exact opaque-pixel check across 27,480 selected p
 
 The check applies to selected regions. OCR can miss details; manual review remains necessary. It does not certify complete anonymization.
 
-Built for Build With AI: Basics with coding-agent assistance and the official six-stage planning pack. Planning drafts and 12 passing core checks are included with the project. Tesseract.js and its pretrained model retain their own licenses.
+The source repository includes project scope, requirements, specification and 12 passing core checks. Tesseract.js and its pretrained model retain their own licenses.
 
 Working app: https://shareproof-workbench.dgrrgddgrrgd.chatgpt.site
 Source and planning documents: https://github.com/hgyu-mech/shareproof

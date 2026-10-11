@@ -22,7 +22,7 @@ A JSON note records the file's SHA-256, dimensions, selected regions and inspect
 
 ### How it was built
 
-ShareProof was created during the competition period using the official Devpost Learn Skill Pack to structure scope, requirements, specification, implementation and shipping checks. The repository includes the planning documents. A coding agent assisted implementation and documentation.
+ShareProof was created during the competition period. The official Devpost Learn Skill Pack structured its scope, requirements, specification and verification. OpenAI Codex assisted implementation and documentation; the repository includes the project documents.
 
 The interface uses HTML, CSS, JavaScript and Canvas. Tesseract.js supplies pretrained English OCR in a browser worker. Its scripts, WebAssembly cores and language model are bundled with the app; recognition uses no remote model API. The application makes no image-upload request and keeps review state in the current tab. Third-party code and model licenses are retained separately from the project's MIT license.
 
