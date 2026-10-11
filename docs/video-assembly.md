@@ -23,11 +23,11 @@ The application pixels come only from owner-supplied CUA captures in `qa/demo/`.
 | 13 | Actual explanation of checks and limitations | 12 |
 | 14 | Actual planning files or repository | 10 |
 
-Use names such as `01.png` or `01-workbench.png`, with exactly one matching PNG per prefix. The order is based on the real interaction states provided by the owner. Revise the manifest if the actual captures differ; never make a screenshot to fit an unsupported claim.
+The supplied CUA captures contain JPEG bytes and use names such as `01.jpg` or `01-workbench.jpg`, with exactly one matching JPEG per prefix. The script accepts actual PNG or JPEG images and records each detected format. For PNG sources, change the corresponding manifest pattern to `01*.png`. Renaming the supplied JPEG captures to `.jpg` preserves their bytes; it does not convert or alter the screenshot. The order is based on the real interaction states provided by the owner. Revise the manifest if the actual captures differ; never make a screenshot to fit an unsupported claim.
 
 ## Commands
 
-Run from the project directory using the bundled Python interpreter:
+Run from the project directory with Python and Pillow installed:
 
 ```sh
 python scripts/assemble-demo.py --plan

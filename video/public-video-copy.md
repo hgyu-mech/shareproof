@@ -1,6 +1,6 @@
 # Public video title
 
-ShareProof — inspect the screenshot you share | Working browser demo
+ShareProof | Inspect the screenshot you share — working browser demo
 
 # Public video description
 
@@ -12,4 +12,15 @@ The check applies to selected regions. OCR can miss details; manual review remai
 
 Built for Build With AI: Basics with coding-agent assistance and the official six-stage planning pack. Planning drafts and 12 passing core checks are included with the project. Tesseract.js and its pretrained model retain their own licenses.
 
-Add the verified public repository URL here only after publication. Chapter timestamps and English captions are generated during local assembly. Do not describe this edited screenshot sequence as a continuous recording or a speed benchmark.
+Working app: https://shareproof-workbench.dgrrgddgrrgd.chatgpt.site
+Source and planning documents: https://github.com/hgyu-mech/shareproof
+Video: https://youtu.be/xkf0LrtodzU
+
+0:00 Inspect what you share
+0:16 Local OCR
+0:33 Review decisions
+0:53 Manual cover
+1:11 Inspect the exported PNG
+1:38 Open the actual file
+1:48 Undo and inspect again
+1:58 Scope and build checks

@@ -20,70 +20,70 @@
   },
   "scenes": [
     {
-      "id": "01", "capture_pattern": "01*.png", "duration_seconds": 8,
+      "id": "01", "capture_pattern": "01*.jpg", "duration_seconds": 8,
       "title": "Inspect what you share.",
       "caption": "An application receipt is useful evidence. Contact details can travel with it.",
       "capture_expected": "Actual workbench hero and upper part of the synthetic receipt",
       "editorial_fact": "ShareProof · A screenshot review and export inspection tool"
     },
     {
-      "id": "02", "capture_pattern": "02*.png", "duration_seconds": 8,
+      "id": "02", "capture_pattern": "02*.jpg", "duration_seconds": 8,
       "title": "Start with a fictional receipt.",
       "caption": "The demo uses made-up contact details. The receipt should remain readable after covering them.",
       "capture_expected": "Actual scrolled receipt with readable synthetic contact details",
       "editorial_fact": "Original synthetic sample · no real applicant information"
     },
     {
-      "id": "03", "capture_pattern": "03*.png", "duration_seconds": 9,
+      "id": "03", "capture_pattern": "03*.jpg", "duration_seconds": 9,
       "title": "Recognition stays in the browser.",
       "caption": "A bundled English OCR worker searches for email and phone regions. No recognition API receives the image.",
       "capture_expected": "Actual OCR progress state",
       "editorial_fact": "Real captured progress state · no processing-time claim"
     },
     {
-      "id": "04", "capture_pattern": "04*.png", "duration_seconds": 8,
+      "id": "04", "capture_pattern": "04*.jpg", "duration_seconds": 8,
       "title": "Two suggestions. Two decisions.",
       "caption": "The actual scan found two contact candidates. Each needs Cover or Keep visible.",
       "capture_expected": "Actual two OCR results, both pending review",
       "editorial_fact": "Suggestions are review prompts, not a complete privacy scan"
     },
     {
-      "id": "05", "capture_pattern": "05*.png", "duration_seconds": 12,
+      "id": "05", "capture_pattern": "05*.jpg", "duration_seconds": 12,
       "title": "An unfinished review blocks export.",
       "caption": "The email is temporarily kept visible. The phone remains undecided, so the PNG cannot be built yet.",
       "capture_expected": "Actual Keep visible email decision with pending phone and blocked export",
       "editorial_fact": "Keep visible is an explicit choice; undecided suggestions block export"
     },
     {
-      "id": "06", "capture_pattern": "06*.png", "duration_seconds": 8,
+      "id": "06", "capture_pattern": "06*.jpg", "duration_seconds": 8,
       "title": "Cover the sample contacts.",
       "caption": "Both contact suggestions are now covered with solid, opaque rectangles.",
       "capture_expected": "Actual email and phone covered state",
       "editorial_fact": "Two reviewed contact regions"
     },
     {
-      "id": "07", "capture_pattern": "07*.png", "duration_seconds": 10,
+      "id": "07", "capture_pattern": "07*.jpg", "duration_seconds": 10,
       "title": "Add what OCR does not find.",
       "caption": "The participant name is covered manually. Drawing, coordinates and Undo keep the owner in control.",
       "capture_expected": "Actual manual name cover with source coordinates",
       "editorial_fact": "Names, addresses and contextual details still need manual review"
     },
     {
-      "id": "08", "capture_pattern": "08*.png", "duration_seconds": 8,
+      "id": "08", "capture_pattern": "08*.jpg", "duration_seconds": 8,
       "title": "Review the whole image.",
       "caption": "Three regions are selected. The owner confirms the rest of the receipt before building the export.",
       "capture_expected": "Actual three covers and checked visual-review confirmation",
       "editorial_fact": "The surrounding receipt remains useful and readable"
     },
     {
-      "id": "09", "capture_pattern": "09*.png", "duration_seconds": 15,
+      "id": "09", "capture_pattern": "09*.jpg", "duration_seconds": 15,
       "title": "Inspect the file that will leave.",
       "caption": "The final PNG is decoded again. All 27,480 selected pixels match the exact opaque cover color.",
       "capture_expected": "Actual successful PNG round trip and selected-pixel result",
       "editorial_fact": "1160 × 910 PNG · selected regions only · exact RGBA check"
     },
     {
-      "id": "10", "capture_pattern": "10*.png", "duration_seconds": 12,
+      "id": "10", "capture_pattern": "10*.jpg", "duration_seconds": 12,
       "title": "A note tied to these exact bytes.",
       "caption": "SHA-256 identifies the inspected PNG. The note records review facts without recognized contact text or the original filename.",
       "capture_expected": "Actual result hash, chunk details and enabled downloads",
@@ -91,28 +91,28 @@
       "show_hash": true
     },
     {
-      "id": "11", "capture_pattern": "11*.png", "duration_seconds": 10,
+      "id": "11", "capture_pattern": "11*.jpg", "duration_seconds": 10,
       "title": "Open the actual downloaded PNG.",
       "caption": "The selected details are covered in the exported file. Useful confirmation details remain visible.",
       "capture_expected": "Actual downloaded PNG opened in the browser",
       "editorial_fact": "The output file, not only the editing preview"
     },
     {
-      "id": "12", "capture_pattern": "12*.png", "duration_seconds": 10,
-      "title": "An edit invalidates the old inspection.",
-      "caption": "Undo changes the reviewed image. The previous export is unavailable until the updated PNG is built and checked again.",
+      "id": "12", "capture_pattern": "12*.jpg", "duration_seconds": 10,
+      "title": "Revise, then inspect again.",
+      "caption": "Undo removes the manual name cover. A changed image needs fresh visual review and export inspection.",
       "capture_expected": "Actual Undo or cover removal with invalidated result",
       "editorial_fact": "Inspection belongs to a specific version of the file"
     },
     {
-      "id": "13", "capture_pattern": "13*.png", "duration_seconds": 12,
+      "id": "13", "capture_pattern": "13*.jpg", "duration_seconds": 12,
       "title": "Keep the promise narrow and visible.",
       "caption": "OCR can miss details. This checks selected covers; it does not certify complete anonymization or redact PDFs.",
       "capture_expected": "Actual how-check-works or scope and limitations panel",
       "editorial_fact": "Local image processing · no image upload request · manual review required"
     },
     {
-      "id": "14", "capture_pattern": "14*.png", "duration_seconds": 10,
+      "id": "14", "capture_pattern": "14*.jpg", "duration_seconds": 10,
       "title": "From scope to an inspectable result.",
       "caption": "The six-stage planning pack guided scope, PRD and specification drafts. All 12 core checks pass.",
       "capture_expected": "Actual repository or planning files, with no invented learner reflection",

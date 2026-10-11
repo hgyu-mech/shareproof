@@ -58,8 +58,9 @@ def inspect_captures(captures):
     records = []
     for scene, path in captures:
         with Image.open(path) as source:
-            if source.format != "PNG":
-                raise ValueError(f"{path.name}: PNG captures are required.")
+            source_format = source.format
+            if source_format not in {"PNG", "JPEG"}:
+                raise ValueError(f"{path.name}: actual PNG or JPEG captures are required.")
             source.verify()
         with Image.open(path) as source:
             width, height = source.size
@@ -68,6 +69,7 @@ def inspect_captures(captures):
         raw = path.read_bytes()
         records.append({
             "scene": scene["id"], "capture": path.relative_to(ROOT).as_posix(),
+            "format": source_format,
             "width": width, "height": height, "bytes": len(raw),
             "sha256": hashlib.sha256(raw).hexdigest(),
         })
@@ -182,7 +184,7 @@ def render(manifest, manifest_path, captures, records, total, ffmpeg):
     (output / "chapters.txt").write_text("\n".join(chapters) + "\n", encoding="utf-8")
     destination = output / "shareproof-demo-140s.mp4"
     command = [
-        str(ffmpeg), "-hide_banner", "-y", "-f", "concat", "-safe", "0", "-i", str(concat_file),
+        str(ffmpeg), "-hide_banner", "-loglevel", "warning", "-y", "-f", "concat", "-safe", "0", "-i", str(concat_file),
         "-t", str(total), "-vf", "fps=30,format=yuv420p", "-c:v", "libx264",
         "-preset", "medium", "-crf", "18", "-movflags", "+faststart", "-an",
         "-metadata", "title=ShareProof — working browser demo",
