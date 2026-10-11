@@ -1,0 +1,8 @@
+node_modules/
+.agents/
+.env
+.env.*
+.openai/local/
+qa/
+devpost/learner-profile.md
+*.log
